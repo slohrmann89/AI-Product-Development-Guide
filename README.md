@@ -31,7 +31,7 @@ Be concise. 1500 characters max.
 
 Employ these skills:
 
-- **Problem framing / Business Analyst** (BMAD – `bmad-bmm-analyst`, `/product-brief`, `/brainstorm-project`, `/research`) — [aj-geddes/claude-code-bmad-skills](https://aj-geddes.github.io/claude-code-bmad-skills/)
+- **Problem framing / Business Analyst** (AI%20Product%20Development%20Guide/BMAD – `bmad-bmm-analyst`, `/product-brief`, `/brainstorm-project`, `/research`) — [aj-geddes/claude-code-bmad-skills](https://aj-geddes.github.io/claude-code-bmad-skills/)
 - **Discovery interview script** — [`slgoodrich/agents`](https://github.com/slgoodrich/agents)
 
 ### Vetting the idea
@@ -43,8 +43,8 @@ This is the business idea:
 -> input idea here <-
 
 Please research:
-- Competition (make this a table)
-- Reach (TAM, SAM, SOM…)
+- Competition (AI%20Product%20Development%20Guide/make this a table)
+- Reach (AI%20Product%20Development%20Guide/TAM, SAM, SOM…)
 - Possible MRR for a realistic reach
 - Generate a SWOT matrix
 - For the last paragraph: Play devils advocate: beat up the idea
@@ -57,14 +57,14 @@ If there’s competition that’s great! It means there’s value. Now research 
 You can also make use of these skills:
 
 - **Competitive landscape** — [MCPMarket: Market Research & Competitive Analysis](https://mcpmarket.com/tools/skills/market-research-competitive-analysis-1)
-- **Competitive landscape (Discovery)** — [MCPMarket: Market Discovery & Competitor Analysis](https://mcpmarket.com/zh/tools/skills/market-discovery-competitor-analysis)
-- **Market sizing (TAM/SAM/SOM)** — [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills)
+- **Competitive landscape (AI%20Product%20Development%20Guide/Discovery)** — [MCPMarket: Market Discovery & Competitor Analysis](https://mcpmarket.com/zh/tools/skills/market-discovery-competitor-analysis)
+- **Market sizing (AI%20Product%20Development%20Guide/TAM/SAM/SOM)** — [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills)
 
 ### Positioning
 
 In a world where it only takes 5 minutes to build an app from scratch, you can’t outperform your competition. The only moat / defensible value that you can build is your brand. This positioning skill helps you define one of the cornerstones of your brand: your unique position, your unique offering. Use this skill to find your unique positioning:
 
-[b2b-positioning.skill](attachment:a08bcf19-2026-4cb9-b5b3-90152ab6b730:b2b-positioning.skill)
+[b2b-positioning.skill](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/b2b-positioning.skill)
 
 - **Devil's advocate / Pre-Mortem** — [deanpeters/product-manager-prompts](https://github.com/deanpeters/product-manager-prompts)
 - **Ethics & misuse scan** — [skysheng7/ai-agent-prompts](https://github.com/skysheng7/ai-agent-prompts)
@@ -87,8 +87,8 @@ A good product hypothesis is **specific, measurable, falsifiable**, and ties a c
 
 ```
 For [user segment] with [problem],
-if we change [X] (feature/UX/pricing),
-we expect [Y] (metric movement by [amount] in [time])
+if we change [X] (AI%20Product%20Development%20Guide/feature/UX/pricing),
+we expect [Y] (AI%20Product%20Development%20Guide/metric movement by [amount] in [time])
 because [reason]. We’ll test with [method Z] on [sample],
 success = [threshold].
 ```
@@ -213,7 +213,7 @@ Please adapt all primitives, components, styles, and colors in this file to matc
 
 Once we have the design system we can employ it in [designing with AI](https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/). But when you want consistent designs you need to not only connect your design system to build the designs using your components. Just like the [AGENTS.md](http://AGENTS.md) file for your AI coding you need and DESIGN.md file for your AI designing your UI. Let the AI adjust this based on your design rules.
 
-[DESIGN.md](AI%20Product%20Development%20Guide/DESIGN.md)
+[DESIGN.md](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/DESIGN.md)
 
 ### Spec
 
@@ -225,7 +225,7 @@ If you can, do write tests for your business logic and put them in the spec, so 
 
 This is where you can steer development. Put maximum effort into writing a good spec.
 
-[Spec Example](AI%20Product%20Development%20Guide/Spec%20Example.md)
+[Spec Example](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/Spec-Example.md)
 
 # Product Development
 
@@ -235,7 +235,7 @@ AI is not great at scaffolding. If you have a really complex technical setup wit
 
 ### Package Discovery
 
-Feed the refined spec into your AI of choice with "Heavy Thinking" to search for and recommend specific, well-maintained GitHub packages (e.g., for a WYSIWYG editor) to avoid building complex components from scratch.
+Feed the refined spec into your AI of choice with "Heavy Thinking" to search for and recommend specific, well-maintained GitHub packages (AI%20Product%20Development%20Guide/e.g., for a WYSIWYG editor) to avoid building complex components from scratch.
 
 Search for unique UI Components here: https://uiverse.io/elements
 
@@ -245,9 +245,9 @@ By now AI Coding setups have become whole systems. Like this one for example htt
 
 The least you can do though is give the Agents some Guardrails with:
 
-[AGENTS.md](AI%20Product%20Development%20Guide/AGENTS.md)
+[AGENTS.md](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/AGENTS.md)
 
-[architecture_setup.md](AI%20Product%20Development%20Guide/architecture_setup.md)
+[architecture_setup.md](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/architecture_setup.md)
 
 and a *lessons.md* 
 
@@ -326,7 +326,7 @@ Use this to get an overview of what is being developed:
 
 - https://github.com/Lum1104/Understand-Anything
 
-and then use these skills to check the important parts (everything which is handling money and or your customers data) for security issues.
+and then use these skills to check the important parts (AI%20Product%20Development%20Guide/everything which is handling money and or your customers data) for security issues.
 
 - **Security Review** — [anthropics/claude-code-security-review](https://github.com/anthropics/claude-code-security-review)
 - https://github.com/cosai-oasis/project-codeguard/tree/main
@@ -335,7 +335,7 @@ and then use these skills to check the important parts (everything which is hand
 
 The thing where probably there never was time left to do it. With all the time freed up now we can focus on this very important thing: A11y.
 
-- **UX Checklist (WCAG, States, A11y)** — [playbooks: ui-design-review](https://playbooks.com/skills/rknall/claude-skills/ui-design-review)
+- **UX Checklist (AI%20Product%20Development%20Guide/WCAG, States, A11y)** — [playbooks: ui-design-review](https://playbooks.com/skills/rknall/claude-skills/ui-design-review)
 
 # Feedback loop & Self learning system
 
@@ -347,7 +347,7 @@ Further we have this in the AGENTS.md, which updates the file after any learning
 After ANY correction from the user: update tasks/lessons.md with the pattern
 ```
 
-[Lessons.skill](AI%20Product%20Development%20Guide/Lessons%20skill.md)
+[Lessons.skill](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/Lessons-skill.md)
 
 Claude Code does this automatically.
 
@@ -378,7 +378,7 @@ Make your system even more powerful. Give it skills. Mad Skills.
 - https://hvpandya.com/llm-design-systems
 - https://youtu.be/1aI7pAlkz4w?is=CwBGa0KuHonoW6TP
 - https://www.uber.com/en-CA/blog/automate-design-specs/
-- **Insight-to-backlog** — [alaniswright.com](http://alaniswright.com) [(Cursor + MCP as PM)](https://alaniswright.com/blog/using-cursor-and-mcp-as-a-product-manager/)
+- https://alaniswright.com/blog/using-cursor-and-mcp-as-a-product-manager/
 - https://github.com/obra/superpowers
 - https://www.builder.io/blog/design-system-ai-automation
 - https://muz.li/blog/figma-just-opened-the-canvas-to-ai-agents-heres-what-it-means-for-designers/?utm_source=extension&utm_medium=click&utm_campaign=muzli
