@@ -1,8 +1,8 @@
 # AI Product Development Guide
 
-# V0.1
+# V0.2
 
-This is the first version of Sebastian’s AI Product Development Guide. There are still a lot of things left to figure out. If you have any hints or pointers I am greatly thankful. Currently I am experimenting with creating and using various skills.
+Added Design System in AI and in Code.
 
 # Intro
 
@@ -31,7 +31,7 @@ Be concise. 1500 characters max.
 
 Employ these skills:
 
-- **Problem framing / Business Analyst** (AI%20Product%20Development%20Guide/BMAD – `bmad-bmm-analyst`, `/product-brief`, `/brainstorm-project`, `/research`) — [aj-geddes/claude-code-bmad-skills](https://aj-geddes.github.io/claude-code-bmad-skills/)
+- **Problem framing / Business Analyst** (BMAD – `bmad-bmm-analyst`, `/product-brief`, `/brainstorm-project`, `/research`) — [aj-geddes/claude-code-bmad-skills](https://aj-geddes.github.io/claude-code-bmad-skills/)
 - **Discovery interview script** — [`slgoodrich/agents`](https://github.com/slgoodrich/agents)
 
 ### Vetting the idea
@@ -43,8 +43,8 @@ This is the business idea:
 -> input idea here <-
 
 Please research:
-- Competition (AI%20Product%20Development%20Guide/make this a table)
-- Reach (AI%20Product%20Development%20Guide/TAM, SAM, SOM…)
+- Competition (make this a table)
+- Reach (TAM, SAM, SOM…)
 - Possible MRR for a realistic reach
 - Generate a SWOT matrix
 - For the last paragraph: Play devils advocate: beat up the idea
@@ -57,17 +57,35 @@ If there’s competition that’s great! It means there’s value. Now research 
 You can also make use of these skills:
 
 - **Competitive landscape** — [MCPMarket: Market Research & Competitive Analysis](https://mcpmarket.com/tools/skills/market-research-competitive-analysis-1)
-- **Competitive landscape (AI%20Product%20Development%20Guide/Discovery)** — [MCPMarket: Market Discovery & Competitor Analysis](https://mcpmarket.com/zh/tools/skills/market-discovery-competitor-analysis)
-- **Market sizing (AI%20Product%20Development%20Guide/TAM/SAM/SOM)** — [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills)
+- **Market sizing (TAM/SAM/SOM)** — [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills)
 
 ### Positioning
 
 In a world where it only takes 5 minutes to build an app from scratch, you can’t outperform your competition. The only moat / defensible value that you can build is your brand. This positioning skill helps you define one of the cornerstones of your brand: your unique position, your unique offering. Use this skill to find your unique positioning:
 
-[b2b-positioning.skill](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/b2b-positioning.skill)
+[b2b-positioning.skill](AI-Product-Development-Guide/b2b-positioning.skill)
 
 - **Devil's advocate / Pre-Mortem** — [deanpeters/product-manager-prompts](https://github.com/deanpeters/product-manager-prompts)
 - **Ethics & misuse scan** — [skysheng7/ai-agent-prompts](https://github.com/skysheng7/ai-agent-prompts)
+
+# Product Concept & Strategy
+
+You should now have a report telling you if your idea is worth pursuing. Additionally you can test it with this handy AI evaluator: https://syra.up.railway.app/. If there’s competition it means there’s a need. Steal from your competition. Let AI research what their users do not like about their product and there you have a list of features you can improve on.
+
+Put on your PM hat and prioritize the features. Impact / Effort, WSJF, RICE, MoSCoW, NSFW, bobs your uncle. Or use this skill to prioritize for you: https://github.com/deanpeters/Product-Manager-Skills
+
+Then generate a PRD for the first feature: Use https://www.chatprd.ai/ to create the PRD each feature.
+
+This will be a very detailed instruction manual or plan of what we want to build.
+
+Alternative if you don’t have ChatPRD: Use the [create-prd.md](http://create-prd.md) from https://github.com/snarktank/ai-dev-tasks to generate the PRD:
+
+```
+Here's the feature I want to build: [Describe your feature in detail]
+Reference these files to help you: [Optional: @file1.py @file2.ts]
+```
+
+Read and redact the PRD. This is a step where you can steer the development. Delete anything that’s unnecessary.
 
 # Feature Idea
 
@@ -87,8 +105,8 @@ A good product hypothesis is **specific, measurable, falsifiable**, and ties a c
 
 ```
 For [user segment] with [problem],
-if we change [X] (AI%20Product%20Development%20Guide/feature/UX/pricing),
-we expect [Y] (AI%20Product%20Development%20Guide/metric movement by [amount] in [time])
+if we change [X] (feature/UX/pricing),
+we expect [Y] (metric movement by [amount] in [time])
 because [reason]. We’ll test with [method Z] on [sample],
 success = [threshold].
 ```
@@ -107,26 +125,7 @@ Yes, there even more tools which offer automated usability tests.
 
 I would recommend using this with caution. This is something where hallucinations can happen quickly.
 
-And the risks that come with incorrectly interpreted user research results are serious.
-
-# Product Concept
-
-You should now have a report telling you if your idea is worth pursuing. If there’s competition it means there’s a need. Steal from your competition. Let AI research what their users do not like about their product and there you have a list of features you can improve on.
-
-Put on your PM hat and prioritize the features. Impact / Effort, WSJF, RICE, MoSCoW, NSFW, bobs your uncle. Or use this skill to prioritize for you: https://github.com/deanpeters/Product-Manager-Skills
-
-Then generate a PRD for the first feature: Use https://www.chatprd.ai/ to create the PRD each feature.
-
-This will be a very detailed instruction manual or plan of what we want to build.
-
-Alternative if you don’t have ChatPRD: Use the [create-prd.md](http://create-prd.md) from https://github.com/snarktank/ai-dev-tasks to generate the PRD:
-
-```
-Here's the feature I want to build: [Describe your feature in detail]
-Reference these files to help you: [Optional: @file1.py @file2.ts]
-```
-
-Read and redact the PRD. This is a step where you can steer the development. Delete anything that’s unnecessary.
+And the risks that come with incorrectly interpreted user research results are absolute.
 
 # Product Design
 
@@ -135,28 +134,6 @@ Read and redact the PRD. This is a step where you can steer the development. Del
 Generate a User Flow based on the PRD with https://uxpilot.ai/ux-frameworks/user-flows-workshop
 
 We basically want to know which screens we’ll have to design in the end. You can also ask your AI of choice to give you a list of screens + description for the screens.
-
-### UI Design
-
-Use the Flow to Design the UI for the feature.
-
-I recently experimented with having Claude Code design Screens in Figma via the https://github.com/southleft/figma-console-mcp This produced the most consistent designs so far. 30 screens in 30 minutes.
-
-Use any component library / design system of your choosing as base. I’d recommend [shadcn](https://www.figma.com/community/file/1203061493325953101), since AI is great at using this to code as well.
-
-Alternatively Design the Screens using any of those tools:
-
-- https://stitch.withgoogle.com/
-- https://www.figma.com/
-- https://www.relume.io/
-- https://uxpilot.ai/de
-- https://bolt.new/
-- https://lovable.dev/
-- https://replit.com/
-- https://v0.app/
-- https://www.aura.build/
-
-Yes, some of these tools claim they build production ready applications. Which are riddled with security vulnerabilities, accessibility issues and which definitely do not scale beyond a certain complexity. So to me they are merely prototyping tools.
 
 ## Design System
 
@@ -171,15 +148,9 @@ For integrating AI and Design Systems there are multiple use cases in my mind:
 
 So let’s create an entire design system from scratch with AI. After all that’s what AI is great at: recreating something that has been done before. And Design Systems have been done a thousand times.
 
-### Art Direction and Theme
+### Design System in AI
 
-First we Design a Style: Shapes, Colors, Typescale, Rythm, … Gather Style Inspiration. Create an Art Direction. Google Stitch comes in very handy here. We take a couple websites we gathered during our Inspiration research and tell it to
-
-```
-Create a “Design System” based on the provided inspiration.
-```
-
-While it does claim to be a “Design System” all this really is is a first rough style. But this is already everything we want for the first step. Gather inspiration here:
+First we gather inspiration in order to Create an Art Direction, a Style. Shapes, Colors, Typescale, Rythm,… go hunt for inspiration here
 
 - https://mobbin.com/
 - https://godly.website/
@@ -187,21 +158,23 @@ While it does claim to be a “Design System” all this really is is a first ro
 - https://www.designspiration.com/
 - https://dribbble.com/
 
-Shadcn is the defacto default underlying engine under every modern user interface implementation today. So we need to create a template that styles our Shadcn components in the way that we have designed the components.
+Just like the [AGENTS.md](http://AGENTS.md) file for your AI coding you need and [DESIGN.md](https://stitch.withgoogle.com/docs/design-md/overview) file for your AI designing your UI. While most tools claim to create a “Design System” all they really do create is a rough style. Design tokens, nothing more. Only a few tools go further.
 
-```
-Create a shadcn theme based on the Design System
-```
+- Google Stitch only generates design tokens, no real design system
+- https://github.com/dominikmartn/hue creates a whole design system including components
+- [Claude Design](https://www.anthropic.com/news/claude-design-anthropic-labs) creates components, tone of voice and even logo if you don’t have one
 
-Alternatively you can of course create your theme with a tool like this:
+You can alternatively grab a DESIGN.md from this collection: https://getdesign.md/
 
-- https://tweakcn.com/editor/theme
+Or from this website: https://neuform.ai/
+
+But these are rather just the design tokens.
 
 ### Design System in Figma
 
 Let’s bring our style to Figma. This is where our design system needs to be used. This is where we craft designs. And we still need to craft designs.
 
-We will use https://www.figma.com/community/file/1203061493325953101 shadcn/ui - Design System ****as base. We’ll use the Figma MCP in order to let the AI update the design system with our desired style.
+We will use https://www.figma.com/community/file/1203061493325953101 shadcn/ui - Design System ****as base. We’ll use the [Figma MCP](https://github.com/figma/mcp-server-guide) in order to let the AI update the design system with our desired style.
 
 ```
 Please adapt all primitives, components, styles, and colors in this file to match this shadcn theme.
@@ -209,23 +182,67 @@ Please adapt all primitives, components, styles, and colors in this file to matc
 
 *You now have a design system ready to go with your desired style and can ask the AI of your choice to design screens with it.*
 
-### **Designing with consistency**
+#### **Design System from Scratch**
 
-Once we have the design system we can employ it in [designing with AI](https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/). But when you want consistent designs you need to not only connect your design system to build the designs using your components. Just like the [AGENTS.md](http://AGENTS.md) file for your AI coding you need and DESIGN.md file for your AI designing your UI. Let the AI adjust this based on your design rules.
+If you do not want to use Shadcn, but rather create your own design system in figma [Ubers](https://www.uber.com/ca/en/blog/automate-design-specs/) [uSpec](https://docs.uspec.design/) comes in very handy. It creates design documentation in figma based on your implementation.
 
-[DESIGN.md](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/DESIGN.md)
+### Design System in Code
+
+The goal is to have a system that always stays in sync - figma and code. This gives us the ultimate speed and control. The system consists of two parts: Design Tokens (=Buttons,…) and UI Components (=Colors, Fonts,…).
+
+**Design Tokens**
+
+- Naming tokens is often the hardest part. Use this tool to make it easier on yourself: https://www.namedesigntokens.guide/builder
+- Export the tokens from Figma to JSON using Figma Variables Export. Open Variables Window in Figma, Right Click on a Collection and “Export mode”.
+- Load the JSON into Style Dictionary https://styledictionary.com/ and it transforms your tokens into CSS variables or Tailwind config.
+
+**Components**
+
+- Ask the AI to create a design system using your newly created tokens, your DESIGN.md in the in [Storybook](https://storybook.js.org/) or any other design system framework you like.
+- Use any component library / design system of your choosing as base. I’d recommend [shadcn](https://www.figma.com/community/file/1203061493325953101), since AI is great at using this to code as well.
+- The UI Components come from the other side: from code. Ask the AI to implement the them according to the implementation, using the tokens in your system.
+- To keep everything in sync set up a GitHub Action that listens to your Token changes. A push in Figma results in a Pull Request in the repo.
+
+### UI Design
+
+Using the Flow and our design system we can [use AI to design the feature for us](https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/).
+
+I recently experimented with having Claude Code design Screens in Figma via the https://github.com/southleft/figma-console-mcp This produced the most consistent designs so far. 30 screens in 30 minutes. Since then Figma released their own MCP https://github.com/figma/mcp-server-guide which even knows autolayout and produces even better results.
+
+Alternatively Design the Screens with AI using one of those tools:
+
+- https://www.lunagraph.com/
+- https://efecto.app/
+- https://paper.design/
+- https://www.pencil.dev/
+- https://stitch.withgoogle.com/
+- https://www.relume.io/
+- https://uxpilot.ai/de
+- https://bolt.new/
+- https://lovable.dev/
+- https://replit.com/
+- https://v0.app/
+- https://www.aura.build/
+
+### UI Designs from Code
+
+Figma MCP can create UI Designs for the code that you have already generated. This helps if you want to adjust the design of an existing feature.
+
+```
+Create all screens in this code in Figma.
+```
 
 ### Spec
 
 Based on everything we have gathered so far – the User Flow, the UI Design and the PRD – we create the **Spec**.
 
-The Spec is the source of truth, the “system prompt” for each feature.
+The Spec is the source of truth for each feature.
 
 If you can, do write tests for your business logic and put them in the spec, so you can later watch as they turn green, while the AI codes. 
 
 This is where you can steer development. Put maximum effort into writing a good spec.
 
-[Spec Example](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/Spec-Example.md)
+[Spec Example](AI-Product-Development-Guide/Spec-Example.md)
 
 # Product Development
 
@@ -235,7 +252,7 @@ AI is not great at scaffolding. If you have a really complex technical setup wit
 
 ### Package Discovery
 
-Feed the refined spec into your AI of choice with "Heavy Thinking" to search for and recommend specific, well-maintained GitHub packages (AI%20Product%20Development%20Guide/e.g., for a WYSIWYG editor) to avoid building complex components from scratch.
+Feed the refined spec into your AI of choice with "Heavy Thinking" to search for and recommend specific, well-maintained GitHub packages (e.g., for a WYSIWYG editor) to avoid building complex components from scratch.
 
 Search for unique UI Components here: https://uiverse.io/elements
 
@@ -245,19 +262,11 @@ By now AI Coding setups have become whole systems. Like this one for example htt
 
 The least you can do though is give the Agents some Guardrails with:
 
-[AGENTS.md](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/AGENTS.md)
+[AGENTS.md](AI-Product-Development-Guide/AGENTS.md)
 
-[architecture_setup.md](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/architecture_setup.md)
+[architecture_setup.md](AI-Product-Development-Guide/architecture_setup.md)
 
 and a *lessons.md* 
-
-### Test the setup
-
-Define the style, then build.
-
-```
-Create a demo page with all components you can use.
-```
 
 ## AI Coding
 
@@ -280,19 +289,19 @@ Provide the Design via Figma MCP or as a screenshot, doesn’t really make a dif
 
 Provide the UI Code → Get the code from figma in dev mode. Yes, the MCP does this, the code from the plugins inside Figma is better.
 
+Make it pretty using this skill: https://github.com/Leonxlnx/taste-skill
+
 *Press enter. You should now see code.*
 
 ### Cloud Agents
 
 I have tried Cursors Cloud agents with the integration in Linear. This setup works surprisingly well. Added benefit: you can integrate it in slack as well and steer the entire development workflow from your smartphone on a beach while slurping a tequila sunrise.
 
-### Make it pretty
-
-https://github.com/Leonxlnx/taste-skill
-
 ### Getting found better
 
 https://github.com/AgriciDaniel/claude-seo
+
+https://github.com/nowork-studio/toprank/tree/main
 
 ### Chunking
 
@@ -326,7 +335,7 @@ Use this to get an overview of what is being developed:
 
 - https://github.com/Lum1104/Understand-Anything
 
-and then use these skills to check the important parts (AI%20Product%20Development%20Guide/everything which is handling money and or your customers data) for security issues.
+and then use these skills to check the important parts (everything which is handling money and or your customers data) for security issues.
 
 - **Security Review** — [anthropics/claude-code-security-review](https://github.com/anthropics/claude-code-security-review)
 - https://github.com/cosai-oasis/project-codeguard/tree/main
@@ -335,7 +344,7 @@ and then use these skills to check the important parts (AI%20Product%20Developme
 
 The thing where probably there never was time left to do it. With all the time freed up now we can focus on this very important thing: A11y.
 
-- **UX Checklist (AI%20Product%20Development%20Guide/WCAG, States, A11y)** — [playbooks: ui-design-review](https://playbooks.com/skills/rknall/claude-skills/ui-design-review)
+- **UX Checklist (WCAG, States, A11y)** — [playbooks: ui-design-review](https://playbooks.com/skills/rknall/claude-skills/ui-design-review)
 
 # Feedback loop & Self learning system
 
@@ -347,9 +356,11 @@ Further we have this in the AGENTS.md, which updates the file after any learning
 After ANY correction from the user: update tasks/lessons.md with the pattern
 ```
 
-[Lessons.skill](AI%20Product%20Development%20Guide/AI-Product-Development-Guide/Lessons-skill.md)
+[Lessons.skill](AI-Product-Development-Guide/Lessons-skill.md)
 
 Claude Code does this automatically.
+
+If you have a KPI you want to consistently improve, try: https://github.com/karpathy/autoresearch
 
 ---
 
@@ -382,3 +393,6 @@ Make your system even more powerful. Give it skills. Mad Skills.
 - https://github.com/obra/superpowers
 - https://www.builder.io/blog/design-system-ai-automation
 - https://muz.li/blog/figma-just-opened-the-canvas-to-ai-agents-heres-what-it-means-for-designers/?utm_source=extension&utm_medium=click&utm_campaign=muzli
+- https://www.linkedin.com/pulse/creating-design-system-style-dictionary-amitabha-ghosh-npmqc/
+- https://medium.com/typeforms-engineering-blog/supercharging-design-system-docs-with-mcps-cba4a8a96960
+- https://abduzeedo.com/hue-claude-code-design-system
